@@ -1,20 +1,22 @@
 body {
-    background-color: black;
+    background-image: linear-gradient(yellow, grey);
 }
 
 .Input {
-    background-color: rgba(0, 0, 255, 0.5);
-    color: pink;
+    background-color: rgb(0, 0, 0);
+    color: rgb(247, 0, 255);
     display: block;
-    width: 30vw;
+    width: 50vw;
+    height: 7vh;
     position: absolute;
-    left: 33%;
+    left: 24%;
     top: 40%;
+    border-radius: 30px;
 }
 
 .searchBtn {
-    color: red;
-    background-color: rgba(0, 0, 255, 0.582);
+    color: rgb(247, 0, 255);
+    background-color: rgb(0, 0, 0);
     position: absolute;
     left: 41.5%;
     width: 200px;
@@ -28,4 +30,14 @@ body {
 p {
     color: orange;
     background-color: yellow;
+}
+
+.weatherContainer {
+    background-color: black;
+    color: yellow;
+    border-radius: 50px;
+    width: 40%;
+    position: relative;
+    left: 29%;
+    text-align: center;
 }
