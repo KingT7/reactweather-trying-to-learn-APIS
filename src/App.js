@@ -2,6 +2,8 @@ import React from "react";
 import './App.css';
 import {useState} from 'react';
 
+
+
 function App() {
 // Remember you should use .env file instead to keep key private. 
 const apiKey =  "f36fd0225bdc44b8851203207220306";
@@ -44,7 +46,8 @@ const [displayinfo, setDisplayInfo] = useState({});
 
     />
     <br/>
-      <button 
+    <br/>
+      <button
       className="searchBtn" 
       type="Sumbit"
       onClick={fetchData}
