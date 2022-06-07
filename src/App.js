@@ -7,7 +7,7 @@ function App() {
 const apiKey =  "f36fd0225bdc44b8851203207220306";
 
 // Reminder to self this is for setting api query and input form value.
-const [place, setPlace] = useState(); 
+const [place, setPlace] = useState(''); 
 
 // Reminder to self this is for setting specific info requested and displaying that info. 
 const [displayinfo, setDisplayInfo] = useState({}); 
@@ -17,17 +17,17 @@ const [displayinfo, setDisplayInfo] = useState({});
         e.preventDefault()
         console.log("refresh prevented")
       }
-
+ 
      const fetchData = () => {
        fetch( 
         `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${place}&aqi=no`
        )
        .then((res) => res.json())
        .then((data) => setDisplayInfo({
-      name: data.location.name,
-      country: data.location.country,
-      localtime: data.location.localtime,
-      temp: data.current.temp_f 
+      name: "The current weather temperature in: " + data.location.name + ", " , 
+      country: data.location.country + " is: ",
+      localtime: "At the following date and time: " + data.location.localtime,
+      temp: data.current.temp_f + " Degrees Farenheit"
        }));
     }
 
@@ -53,11 +53,9 @@ const [displayinfo, setDisplayInfo] = useState({});
   </div>
 
 <div className="weatherContainer">
-<h2> The current weather temperature in: </h2>
-<h2> {displayinfo.name}, {displayinfo.country}</h2>
-<h2> is: </h2>
-<h2> {displayinfo.temp} Degrees Farenheit</h2>
-<h2> At the following date and time: {displayinfo.localtime}</h2>
+<h2> {displayinfo.name} {displayinfo.country}</h2>
+<h2> {displayinfo.temp} </h2>
+<h2> {displayinfo.localtime}</h2>
 
 
 
